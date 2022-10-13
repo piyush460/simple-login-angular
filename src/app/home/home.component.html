@@ -1,0 +1,26 @@
+﻿<h1>Hi {{currentUser.firstName}}!</h1>
+<p>You're logged in with Angular 8!!</p>
+<h3>All registered users:</h3>
+<ul>
+    <li *ngFor="let user of users">
+        {{user.username}} ({{user.firstName}} {{user.lastName}})
+        - <a (click)="deleteUser(user.id)" class="text-danger">Delete</a>
+    </li>
+</ul>
+
+
+<h3>User list</h3>
+<table style="width: 100%;">
+    <tr>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>User name</th>
+        <th>Role</th>
+    </tr>
+    <tr *ngFor="let item of users">
+        <td>{{item.firstName}}</td>
+        <td>{{item.lastName}}</td>
+        <td>{{item.username}}</td>
+        <td>{{item.role == '1' ? 'USER' : 'AUDITOR'}}</td>
+    </tr>
+</table>
